@@ -67,7 +67,7 @@ mount_container () {
     [ -f "${container}" ] || usage "Container file not found"
 
     # attach the container to a vnd loopback device
-    vnconfig vnd0 disk.img
+    vnconfig vnd0 "${container}"
 
     # Attach the volume
     bioctl -c C -l vnd0a softraid0
